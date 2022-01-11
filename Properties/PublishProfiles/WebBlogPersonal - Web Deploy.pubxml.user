@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAloJNqFO4uEeATCPtjP/6pQAAAAACAAAAAAAQZgAAAAEAACAAAAC16ylVeMPZSTbXh+hFz2hWynjB0Ga/tOHwivEr6XUbdAAAAAAOgAAAAAIAACAAAACrcFFzKGjTljX/KvM16VkjhFlSconeZQW6J5N7ON869YAAAACOAGFrEgvwhUVvG7CA6p0CoxKPCJJnIYehJ6LfL9YyEsmXKsPWIq21P3h2ueC+opAmaiZLxzCxTv2FrD3JAvcKARxKA3gnwYD5S3HTMkaBv4Hz//XzEdflrWpln8BkUSvEoL4eK2FdldkJQZAsDx1WtM8ojpLxQlW+9ZMDeF6TlUAAAACEdySxyoHsGf6U1C0OPp8ERyeVVBijFPeTPpNN+qjdxihWgjKpPz85iD4OKQl8JLsuZo7jf+FFr+LuHBe/Dted</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:webblogdbserver.database.windows.net,1433%3bInitial Catalog=WebBlog_db%3bUser Id=adminuser%40webblogdbserver%3bPassword=admin123^</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="VotingSystem.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:webblogdbserver.database.windows.net,1433%3bInitial Catalog=WebBlog_db%3bUser Id=adminuser%40webblogdbserver%3bPassword=admin123^</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

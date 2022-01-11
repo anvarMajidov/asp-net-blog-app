@@ -11,10 +11,5 @@ namespace VotingSystem.Models
         public T Data { get; set; }
         public bool Success { get; set; } = true;
         public string ErrorMessage { get; set; }
-
-        public static implicit operator ServiceResponse<T>(ServiceResponse<List<GetArticleDto>> v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -38,7 +38,7 @@ namespace VotingSystem
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VotingSystem", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebBlog", Version = "v1" });
             });
             services.AddDbContext<ApplicationDbContext>
                 (x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -62,11 +62,11 @@ namespace VotingSystem
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VotingSystem v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebBlog v1"));
             }
 
             app.UseHttpsRedirection();

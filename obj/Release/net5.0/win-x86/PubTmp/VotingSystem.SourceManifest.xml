@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\IT_projects\asp_net_core\asp_web_api\WebBlog\api\obj\Release\net5.0\win-x86\PubTmp\Out\" />
+  <dbfullsql path="D:\IT_projects\asp_net_core\asp_web_api\WebBlog\api\obj\Release\net5.0\win-x86\PubTmp\EFSQLScripts\VotingSystem.Data.ApplicationDbContext.sql" />
+</sitemanifest>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WebBlogPersonal" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\IT_projects\\asp_net_core\\asp_web_api\\WebBlog\\api\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="VotingSystem.Data.ApplicationDbContext" description="" value="Data Source=tcp:webblogdbserver.database.windows.net,1433;Initial Catalog=WebBlog_db;User Id=adminuser@webblogdbserver;Password=admin123^" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\IT_projects\\asp_net_core\\asp_web_api\\WebBlog\\api\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\EFSQLScripts\\VotingSystem\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>
