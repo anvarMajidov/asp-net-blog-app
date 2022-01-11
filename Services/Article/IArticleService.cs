@@ -11,5 +11,6 @@ namespace votingsystem.Services.Articles
         Task<ServiceResponse<GetArticleDto>> GetArticle(int id);
         Task<ServiceResponse<List<GetArticleDto>>> AddArticle(AddArticleDto articleDto);
         Task<ServiceResponse<List<GetArticleDto>>> DeleteArticle(int id);
+        Task<ServiceResponse<GetArticleDto>> UpdateArticle(GetArticleDto updatedArticle);
     }
 }

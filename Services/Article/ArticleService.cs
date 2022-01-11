@@ -108,5 +108,31 @@ namespace votingsystem.Services.Articles
             
             return response;
         }
+
+        public async Task<ServiceResponse<GetArticleDto>> UpdateArticle(GetArticleDto updatedArticle)
+        {
+            ServiceResponse<GetArticleDto> response = new ServiceResponse<GetArticleDto>();
+            Article article = await _db.Articles.FirstOrDefaultAsync(a => a.Id == updatedArticle.Id && a.User.Id == GetUserId());
+
+            if(article == null)
+            {
+                response.Success = false;
+                response.ErrorMessage = "Article not found";
+                return response;
+            }
+            article.Header = updatedArticle.Header;
+            article.Body = updatedArticle.Body;
+
+            _db.Articles.Update(article);
+            await _db.SaveChangesAsync();
+
+            response.Data = new GetArticleDto
+            {
+                Id = article.Id,
+                Header = article.Header,
+                Body = article.Body
+            };
+            return response;
+        }
     }
 }

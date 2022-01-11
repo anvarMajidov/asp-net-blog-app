@@ -28,6 +28,7 @@ namespace VotingSystem.Controllers
             ServiceResponse<List<GetArticleDto>> response = await _articleService.GetAllArticles();
             return Ok(response);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetArticle(int id)
         {
@@ -38,6 +39,7 @@ namespace VotingSystem.Controllers
             }
             return Ok(response);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddArticle(AddArticleDto articleDto)
         {
@@ -46,6 +48,17 @@ namespace VotingSystem.Controllers
             if(response.Data == null)
             {
                 return BadRequest(response);
+            }
+            return Ok(response);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateArticle(GetArticleDto updatedArticle)
+        {
+            ServiceResponse<GetArticleDto> response = await _articleService.UpdateArticle(updatedArticle);
+            if (response.Data == null)
+            {
+                return NotFound();
             }
             return Ok(response);
         }
