@@ -51,17 +51,18 @@ namespace VotingSystem.Data.AuthenticationRepo
             ServiceResponse<int> response = new ServiceResponse<int>();
             try
             {
-                if(!await AdminExists())
-                {
-                    user.Role = "Admin";
-                }
-
+                //This statement is used to create first admin. If there is no user with admin role in database
+                //then this user will be given the role of admin 
+                if(!await AdminExists()) user.Role = "Admin";
+                
+                //Return error if user tries to get the name which already exists in database
                 if (await UserExists(user.Username))
                 {
                     response.Success = false;
                     response.ErrorMessage = "Username already exists in database";
                     return response;
                 }
+                
                 CreatePasswordHash(password, out byte[] passwordSalt, out byte[] passwordHash);
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
